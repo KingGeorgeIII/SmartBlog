@@ -13,20 +13,6 @@
   	</servlet-mapping>
   	
   	<servlet>
-        <servlet-name>sign</servlet-name>
-
-        <servlet-class>guestbook.SignGuestbookServlet</servlet-class>
-
-    </servlet>
-
-    <servlet-mapping>
-
-        <servlet-name>sign</servlet-name>
-
-        <url-pattern>/sign</url-pattern>
-
-    </servlet-mapping>
-  	<servlet>
         <servlet-name>ofysign</servlet-name>
 
         <servlet-class>guestbook.OfySignGuestbookServlet</servlet-class>
@@ -57,6 +43,6 @@
 
 </filter-mapping>
   <welcome-file-list>
-    <welcome-file>ofyguestbook.jsp</welcome-file>
+    <welcome-file>blog.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
