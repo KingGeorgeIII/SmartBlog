@@ -29,14 +29,16 @@
 <html>
 
   <head>
-   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+   <link type="text/css" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+ 
  </head>
 
  
 
   <body>
-
- 
+<div class="w3-container w3-teal">
+ <h3>
+ <a href="viewall.jsp"> <button class="w3-button w3-teal">View all blog posts </button></a>
 
 <%
 
@@ -59,17 +61,17 @@
       pageContext.setAttribute("user", user);
 
 %>
- <a href="makepost.jsp">Make post</a>
 
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">Sign out</a>
+ <a href="makepost.jsp" ><button class="w3-button w3-teal">Make post </button></a>
+<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">
+ <button class="w3-button w3-teal">Sign out</button></a>
 
 <%
-
     } else {
 
 %>
-
-<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
+ <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">
+ <button class="w3-button w3-teal">Sign in</button></a>
 
 <%
 
@@ -77,12 +79,12 @@
 
 %>
 
- 
- 
- <a href="viewall.jsp">View all blog posts</a>
+
+ </h3>
+ </div>
+ <div class="w3-container w3-light-blue">
 
 <%
-
 
 
     // Run an ancestor query to ensure we see the most up-to-date
@@ -99,7 +101,7 @@ Collections.sort(greetings);
 
         %>
 
-        <p>Guestbook '${fn:escapeXml(guestbookName)}' has no messages.</p>
+        <h2>Blog has no messages.</h2>
 
         <%
 
@@ -107,7 +109,7 @@ Collections.sort(greetings);
 
         %>
 
-        <p>Messages in Guestbook '${fn:escapeXml(guestbookName)}'.</p>
+        <h2>Recent Posts</h2>
 
         <%
 		int count = 0;
@@ -137,10 +139,18 @@ Collections.sort(greetings);
 
             }
 
-            %>
-			<p><a href=<%= "\"viewpost.jsp?&title=" + greeting.getTitle() + "&id=" + gid
-			+ "&guser=" + guser + "\"" %> >${fn:escapeXml(greeting_title)}</a></p>
-
+            %><div class="w3-card-4">
+			<a style="text-decoration:none" href=<%= "\"viewpost.jsp?&title=" + greeting.getTitle() + "&id=" + gid
+			+ "&guser=" + guser + "\"" %> >
+			<header class="w3-container w3-blue">
+  				<h5>${fn:escapeXml(greeting_title)}</h5>
+			</header>
+			<div class="w3-container">
+  			<p>${fn:escapeXml(greeting_user)}</p>
+			</div>
+			</a>
+			</div>
+			<br>
             <%
 
         }
@@ -149,7 +159,7 @@ Collections.sort(greetings);
 
 %>
 
-
+</div>
  
 
   </body>
