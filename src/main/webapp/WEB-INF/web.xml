@@ -18,6 +18,30 @@
         <servlet-class>guestbook.OfySignGuestbookServlet</servlet-class>
 
     </servlet>
+    
+    <servlet>
+	 
+	 	<servlet-name>subscribeEmailServlet</servlet-name>
+	 	<servlet-class>guestbook.SubscribeEmailServlet</servlet-class>
+	 
+	 </servlet>
+	 
+	 <servlet-mapping>
+	 	<servlet-name>subscribeEmailServlet</servlet-name>
+	 	<url-pattern>/subEmail</url-pattern>
+	 </servlet-mapping>
+	 
+	 
+	 
+	 <servlet>
+		<servlet-name>cronEmailServlet</servlet-name>
+		<servlet-class>guestbook.CronSendEmailServlet</servlet-class>
+	 </servlet>
+	 
+	<servlet-mapping>
+		<servlet-name>cronEmailServlet</servlet-name>
+		<url-pattern>/cronSendEmailServlet</url-pattern>
+	</servlet-mapping>
 
     <servlet-mapping>
 

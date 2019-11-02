@@ -170,6 +170,15 @@ Collections.sort(greetings);
 
 %>
 
+<form action="/subEmail" method="post">
+	      <div><input type="submit" name="Subscribe" value="Subscribe" class="button"/></div>
+	      <input type="hidden" name="subOrUnsub" value="sub"/>
+ </form>
+ <form action="/subEmail" method="post">
+	      <div><input type="submit" name="Unsubscribe" value="Unsubscribe" class="button"/></div>
+	      <input type="hidden" name="subOrUnsub" value="unsub"/>
+ </form>
+
 </div>
  
 
