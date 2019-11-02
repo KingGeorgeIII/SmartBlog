@@ -30,12 +30,23 @@
 
   <head>
    <link type="text/css" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link type="text/css" rel="stylesheet" href="stylesheets\main.css" />
  
+
+
  </head>
 
  
 
-  <body>
+  <body class = "w3-light-blue">
+  
+  <div class="hero-image">
+  <div class="hero-text">
+    <h1>Fresh Blog</h1>
+    <p>Let's talk about water</p>
+  </div>
+</div>
+
 <div class="w3-container w3-teal">
  <h3>
  <a href="viewall.jsp"> <button class="w3-button w3-teal">View all blog posts </button></a>
@@ -143,10 +154,10 @@ Collections.sort(greetings);
 			<a style="text-decoration:none" href=<%= "\"viewpost.jsp?&title=" + greeting.getTitle() + "&id=" + gid
 			+ "&guser=" + guser + "\"" %> >
 			<header class="w3-container w3-blue">
-  				<h5>${fn:escapeXml(greeting_title)}</h5>
+  				<h5><b>${fn:escapeXml(greeting_title)}</b> by ${fn:escapeXml(greeting_user.nickname)}</h5>
 			</header>
 			<div class="w3-container">
-  			<p>${fn:escapeXml(greeting_user)}</p>
+  			<p>${fn:escapeXml(greeting_content)}</p>
 			</div>
 			</a>
 			</div>

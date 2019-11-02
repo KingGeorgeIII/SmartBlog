@@ -29,14 +29,32 @@
 <html>
 
   <head>
-   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+<link type="text/css" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link type="text/css" rel="stylesheet" href="stylesheets\main.css" />
+ 
+
+
  </head>
+
+ 
+
+  <body class = "w3-light-blue">
+  
+  <div class="hero-image">
+  <div class="hero-text">
+    <h1>Fresh Blog</h1>
+    <p>Let's talk about water</p>
+  </div>
+</div>
 
  
 
   <body>
 
- 
+ <div class="w3-container w3-teal">
+ <h3>
+	<a href="blog.jsp"> <button class="w3-button w3-teal">Return to main </button></a>
+  
 
 <%
 
@@ -60,7 +78,9 @@
 
 %>
 
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>
+ <a href="makepost.jsp" ><button class="w3-button w3-teal">Make post </button></a>
+<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">
+ <button class="w3-button w3-teal">Sign out</button></a>
 
 <%
 
@@ -68,7 +88,8 @@
 
 %>
 
-<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
+ <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">
+ <button class="w3-button w3-teal">Sign in</button></a>
 
 
 <%
@@ -76,8 +97,10 @@
     }
 
 %>
-
- <a href="blog.jsp">Return to main</a>
+ 
+  </h3>
+ </div>
+ <div class="w3-container w3-light-blue">
 
 <%
 
@@ -97,7 +120,7 @@ Collections.sort(greetings);
 
         %>
 
-        <p>Guestbook '${fn:escapeXml(guestbookName)}' has no messages.</p>
+        <h2>Blog has no messages.</h2>
 
         <%
 
@@ -105,7 +128,7 @@ Collections.sort(greetings);
 
         %>
 
-        <p>Messages in Guestbook '${fn:escapeXml(guestbookName)}'.</p>
+        <h2>All Posts</h2>
 
         <%
 
@@ -118,31 +141,34 @@ Collections.sort(greetings);
 
                                      greeting.getContent());
 
+            String guser;
+            Long gid = greeting.getId();
+
             if (greeting.getUser() == null) {
-
-                %>
-
-                <p>An anonymous person wrote:</p>
-
-                <%
+            	guser = "anonymous";
 
             } else {
 
                 pageContext.setAttribute("greeting_user",
 
                                          greeting.getUser() );
-
-                %>
-
-                <p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p>
-
-                <%
+                guser = greeting.getUser().getNickname();
 
             }
 
             %>
-			<blockquote>${fn:escapeXml(greeting_title)}</blockquote>
-            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
+			<div class="w3-card-4">
+			<a style="text-decoration:none" href=<%= "\"viewpost.jsp?&title=" + greeting.getTitle() + "&id=" + gid
+			+ "&guser=" + guser + "\"" %> >
+			<header class="w3-container w3-blue">
+  				<h5><b>${fn:escapeXml(greeting_title)}</b> by ${fn:escapeXml(greeting_user.nickname)}</h5>
+			</header>
+			<div class="w3-container">
+  			<p>${fn:escapeXml(greeting_content)}</p>
+			</div>
+			</a>
+			</div>
+			<br>
 
             <%
 
@@ -153,7 +179,7 @@ Collections.sort(greetings);
 %>
 
 
- 
+ </div>
 
   </body>
 

@@ -29,15 +29,36 @@
 <html>
 
   <head>
-   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+    <link type="text/css" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+     <link type="text/css" rel="stylesheet" href="stylesheets\main.css" />
+ 
+
+
  </head>
 
  
 
-  <body>
+  <body class = "w3-light-blue">
+  
+  <div class="hero-image">
+  <div class="hero-text">
+    <h1>Fresh Blog</h1>
+    <p>Let's talk about water</p>
+  </div>
+</div>
 
+ 
 
- <a href="blog.jsp">Return to main</a>
+  <body class = "w3-light-blue">
+
+<div class="w3-container w3-teal">
+ <h3>
+ <a href="blog.jsp">
+  <button class="w3-button w3-teal">Return to main</button>
+  </a></h3>
+</div>
+
+<div class="w3-container w3-light-blue">
   
 
 <%
@@ -66,12 +87,12 @@
     	 %>
     	 
         <form action="/ofysign" method="post">
-        <p> Title </p>|
+        <p> Title </p>
           <div><textarea name="title" rows="1" cols="60"></textarea></div>
-    	<p> Content </p>
+    	<p> Body </p>
           <div><textarea name="content" rows="3" cols="60"></textarea></div>
 
-          <div><input type="submit" value="Post" /></div>
+          <div><a href = "blog.jsp"><input type="submit" value="Post" /></a></div>
 
           <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
 
@@ -82,7 +103,7 @@
 %>
 
 
- 
+ </div>
 
   </body>
 

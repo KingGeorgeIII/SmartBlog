@@ -29,14 +29,31 @@
 <html>
 
   <head>
-   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+    <link type="text/css" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link type="text/css" rel="stylesheet" href="stylesheets\main.css" />
+ 
+
+
  </head>
 
  
 
-  <body>
+  <body class = "w3-light-blue">
+  
+  <div class="hero-image">
+  <div class="hero-text">
+    <h1>Fresh Blog</h1>
+    <p>Let's talk about water</p>
+  </div>
+</div>
 
  
+
+  <body class = "w3-light-blue">
+
+ <div class="w3-container w3-teal">
+ <h3>
+  <a href="blog.jsp"><button class="w3-button w3-teal">Return to main</button></a>
 
 <%
 
@@ -60,9 +77,9 @@
 
 %>
 
-<p>Hello, ${fn:escapeXml(user.nickname)}! (You can
 
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
+<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">
+<button class="w3-button w3-teal">Sign out</button></a>
 
 <%
 
@@ -70,20 +87,19 @@
 
 %>
 
-<p>Hello!
 
-<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
-
-to include your name with greetings you post.</p>
+<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">
+<button class="w3-button w3-teal">Sign in</button></a>
 
 <%
 
     }
 
 %>
-
- <a href="blog.jsp">Return to main</a>
-
+</h3>
+</div>
+ <div class="w3-container w3-light-blue">
+ <br>
 
 <%
 
@@ -125,17 +141,24 @@ Collections.sort(greetings);
             }
 
             %>
-			<p> <b><%= request.getParameter("title") %> </b> by ${fn:escapeXml(greeting_user.nickname)}</p>
-			<p> <%= greeting.getContent() %> </p>
-			<br>
 
+			<div class="w3-card-4">
+			<header class="w3-container w3-blue">
+  				<h5><b>${fn:escapeXml(greeting_title)}</b> by ${fn:escapeXml(greeting_user.nickname)}</h5>
+			</header>
+			<div class="w3-container">
+  			<p>${fn:escapeXml(greeting_content)}</p>
+			</div>
+			</div>
+			<br>
+			
             <%
 
         }
 
 %>
 
- 
+ </div>
 
   </body>
 

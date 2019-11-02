@@ -43,6 +43,9 @@ public class Greeting implements Comparable<Greeting> {
     public Long getId() {
         return id;
     }
+    public String getDate() {
+        return getDate().toString();
+    }
 
     @Override
     public int compareTo(Greeting other) {
